@@ -1,0 +1,11 @@
+# pnpm configuration (pnpm >= 10 reads these settings here, not from package.json)
+#
+# nodeLinker: hoisted gives a flat node_modules (npm-style) which keeps
+# bundler internals such as rollup resolvable without extra configuration.
+nodeLinker: hoisted
+
+onlyBuiltDependencies:
+  - esbuild
+
+# Don't re-verify/install dependencies before every script runs.
+verifyDepsBeforeRun: false

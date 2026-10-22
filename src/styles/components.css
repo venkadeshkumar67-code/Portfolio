@@ -1,0 +1,343 @@
+/* =========================================================
+   Shared UI primitives: container, section, card, buttons,
+   tags, badges, eyebrow, icon, reveal animation.
+   ========================================================= */
+
+/* ---------- Layout ---------- */
+.container {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: var(--max-width);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.section {
+  position: relative;
+  padding-block: var(--section-y);
+}
+
+.section--alt {
+  background: linear-gradient(
+    180deg,
+    transparent,
+    rgba(255, 255, 255, 0.018) 18%,
+    rgba(255, 255, 255, 0.018) 82%,
+    transparent
+  );
+  border-block: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* ---------- Typography helpers ---------- */
+.mono {
+  font-family: var(--font-mono);
+}
+
+.grad {
+  background: var(--grad);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.9rem;
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.eyebrow::before {
+  content: '';
+  width: 26px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent));
+}
+
+.section-title {
+  margin-bottom: 0.7rem;
+  font-size: clamp(1.75rem, 1.2rem + 2.5vw, 2.7rem);
+}
+
+.section-lead {
+  max-width: 60ch;
+  color: var(--muted);
+  font-size: 1.02rem;
+}
+
+.section-head {
+  max-width: 720px;
+  margin-bottom: clamp(2.2rem, 4vw, 3.2rem);
+}
+
+/* ---------- Icons ---------- */
+.icon {
+  width: 1.05em;
+  height: 1.05em;
+  flex: none;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.icon--fill {
+  fill: currentColor;
+  stroke: none;
+}
+
+/* ---------- Card ---------- */
+.card {
+  position: relative;
+  padding: clamp(1.4rem, 2.4vw, 1.9rem);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.022));
+  transition:
+    translate var(--dur) var(--ease-out),
+    border-color var(--dur) var(--ease-out),
+    box-shadow var(--dur) var(--ease-out);
+}
+
+/* `translate` is used instead of `transform` so the hover lift composes with
+   the scroll-reveal animation (which owns `transform`) instead of fighting it. */
+.card:hover {
+  translate: 0 -4px;
+  border-color: var(--border-strong);
+  box-shadow: var(--shadow);
+}
+
+.card-title {
+  margin-bottom: 0.55rem;
+  font-size: 1.06rem;
+  letter-spacing: -0.01em;
+}
+
+.card p {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.icon-badge {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  margin-bottom: 1.05rem;
+  border: 1px solid rgba(62, 230, 176, 0.22);
+  border-radius: 12px;
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.icon-badge .icon {
+  width: 20px;
+  height: 20px;
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  padding: 0.78rem 1.25rem;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: -0.005em;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    transform var(--dur-fast) ease,
+    box-shadow var(--dur) ease,
+    background var(--dur) ease,
+    border-color var(--dur) ease,
+    color var(--dur) ease;
+}
+
+.btn .icon {
+  width: 17px;
+  height: 17px;
+  stroke-width: 1.9;
+}
+
+.btn--primary {
+  background: var(--grad);
+  color: #042018;
+  box-shadow: 0 12px 28px -14px rgba(62, 230, 176, 0.65);
+}
+
+.btn--primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 34px -14px rgba(62, 230, 176, 0.75);
+}
+
+.btn--ghost {
+  border-color: var(--border);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text);
+}
+
+.btn--ghost:hover {
+  transform: translateY(-2px);
+  border-color: var(--border-strong);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.btn--sm {
+  padding: 0.58rem 1rem;
+  font-size: 0.84rem;
+}
+
+.btn--sm .icon {
+  width: 15px;
+  height: 15px;
+}
+
+.btn--lg {
+  padding: 0.95rem 1.5rem;
+  font-size: 0.95rem;
+}
+
+/* ---------- Tags ---------- */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.tags li,
+.tags .tag {
+  padding: 0.34rem 0.68rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-soft);
+  font-size: 0.82rem;
+  font-weight: 500;
+  transition:
+    background var(--dur-fast) ease,
+    border-color var(--dur-fast) ease;
+}
+
+.tags--sm li,
+.tags--sm .tag {
+  padding: 0.3rem 0.6rem;
+  font-size: 0.78rem;
+}
+
+/* ---------- Badges ---------- */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.3rem 0.62rem;
+  border-radius: 999px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+.badge--live {
+  border: 1px solid rgba(62, 230, 176, 0.3);
+  background: rgba(62, 230, 176, 0.1);
+  color: #6ff0c2;
+}
+
+.badge--wip {
+  border: 1px solid rgba(255, 196, 87, 0.28);
+  background: rgba(255, 196, 87, 0.09);
+  color: #ffd27d;
+}
+
+.pulse {
+  width: 7px;
+  height: 7px;
+  flex: none;
+  border-radius: 50%;
+  background: currentColor;
+  animation: pulse-ring 2.4s ease-out infinite;
+}
+
+@keyframes pulse-ring {
+  0% {
+    box-shadow: 0 0 0 0 rgba(62, 230, 176, 0.55);
+  }
+  70% {
+    box-shadow: 0 0 0 7px rgba(62, 230, 176, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(62, 230, 176, 0);
+  }
+}
+
+/* ---------- Social icon buttons ---------- */
+.socials {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.socials a {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--border);
+  border-radius: 11px;
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--muted);
+  transition:
+    color var(--dur-fast) ease,
+    border-color var(--dur-fast) ease,
+    background var(--dur-fast) ease,
+    transform var(--dur-fast) ease;
+}
+
+.socials a:hover {
+  transform: translateY(-2px);
+  border-color: rgba(62, 230, 176, 0.4);
+  background: rgba(62, 230, 176, 0.08);
+  color: var(--accent);
+}
+
+.socials .icon {
+  width: 18px;
+  height: 18px;
+}
+
+/* ---------- Scroll reveal ---------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition:
+    opacity var(--dur-slow) var(--ease-out),
+    transform var(--dur-slow) var(--ease-out);
+  transition-delay: var(--reveal-delay, 0ms);
+  will-change: opacity, transform;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

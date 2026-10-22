@@ -1,0 +1,10 @@
+/* Section shell is fully token-driven; nothing section-specific lives here.
+   Kept as a component-level file so each component owns its own styles. */
+
+.section > .container {
+  display: block;
+}
+
+.section-head > .eyebrow + .section-title {
+  margin-top: 0;
+}

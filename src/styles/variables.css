@@ -1,0 +1,60 @@
+/* =========================================================
+   Design tokens — every colour, radius, shadow and type ramp
+   used across the site is declared once, here.
+   ========================================================= */
+
+:root {
+  /* Surfaces */
+  --bg: #060a12;
+  --bg-2: #080d17;
+  --surface: rgba(255, 255, 255, 0.035);
+  --surface-2: rgba(255, 255, 255, 0.06);
+  --border: rgba(255, 255, 255, 0.09);
+  --border-strong: rgba(255, 255, 255, 0.16);
+
+  /* Text */
+  --text: #e9eff8;
+  --text-soft: #c3cee0;
+  --muted: #93a2b8;
+
+  /* Accent */
+  --accent: #3ee6b0;
+  --accent-2: #4c8dff;
+  --accent-soft: rgba(62, 230, 176, 0.12);
+  --accent-line: rgba(62, 230, 176, 0.3);
+  --grad: linear-gradient(115deg, #3ee6b0 0%, #47d0d8 45%, #4c8dff 100%);
+
+  /* Radii */
+  --radius-sm: 10px;
+  --radius: 16px;
+  --radius-lg: 22px;
+  --radius-xl: 28px;
+
+  /* Elevation */
+  --shadow: 0 20px 50px -20px rgba(0, 0, 0, 0.65);
+  --shadow-glow: 0 18px 40px -18px rgba(62, 230, 176, 0.45);
+
+  /* Type */
+  --font-body: 'Plus Jakarta Sans', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Arial,
+    sans-serif;
+  --font-display: 'Space Grotesk', var(--font-body);
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Consolas, monospace;
+
+  /* Rhythm */
+  --max-width: 1160px;
+  --gutter: clamp(1.15rem, 4vw, 2.5rem);
+  --section-y: clamp(4.5rem, 9vw, 7.5rem);
+  --header-h: 68px;
+
+  /* Motion */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --dur-fast: 0.25s;
+  --dur: 0.35s;
+  --dur-slow: 0.7s;
+}
+
+@media (max-width: 640px) {
+  :root {
+    --header-h: 62px;
+  }
+}
