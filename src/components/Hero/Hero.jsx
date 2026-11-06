@@ -34,11 +34,7 @@ export default function Hero() {
             <span className="hero__caret" aria-hidden="true" />
           </p>
 
-          <p className="hero__lede">
-            BCA graduate from {profile.shortLocation}, building real products for the web and mobile.
-            I designed and maintain a <strong>live college website</strong> used daily by students,
-            faculty and administrators — and I'm now deepening that stack with Java&nbsp;+&nbsp;Spring.
-          </p>
+          <p className="hero__lede">{profile.lede}</p>
 
           <div className="hero__actions">
             <a className="btn btn--primary" href="#projects">

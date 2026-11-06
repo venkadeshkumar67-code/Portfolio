@@ -1,6 +1,6 @@
 /**
  * Single source of truth for all portfolio content.
- * Every string here is taken from (or directly derived from) the resume.
+ * Content is taken from (or directly derived from) the resume and project sources.
  */
 
 export const profile = {
@@ -16,9 +16,10 @@ export const profile = {
   resume: './Venkatesh_Kumar_Resume.pdf',
   availability: 'Open to entry-level software developer roles',
   summary:
-    "BCA graduate from Tenkasi, Tamil Nadu, building real products for the web and mobile. I designed and maintain a live college website used daily by students, faculty and administrators — and I'm now deepening that stack with Java + Spring.",
-  lede: 'Motivated BCA graduate with hands-on experience in web development (PHP/MySQL) and mobile app development (Flutter).',
-  roles: ['Full Stack Developer', 'PHP & MySQL Developer', 'Flutter App Developer', 'Java Enthusiast'],
+    'Motivated BCA graduate with hands-on experience in web development. Proven ability to design, build, and maintain a live production website supporting students, faculty, and administrative workflows. Solid foundation in Java, Python, and object-oriented programming, with strong problem-solving skills and a fast learning curve.',
+  lede:
+    'Motivated BCA graduate with hands-on web development experience. I build and maintain production websites, with a strong foundation in Java, Python, and object-oriented programming.',
+  roles: ['Full Stack Developer', 'React Developer', 'Python Developer', 'Web Developer'],
 };
 
 export const navLinks = [
@@ -41,12 +42,12 @@ export const highlights = [
   {
     icon: 'code',
     title: 'Full-stack web',
-    body: 'I build end-to-end with PHP and MySQL — from database schema and server-side logic to hand-written HTML/CSS that stays fast on slow connections.',
+    body: 'I build responsive web experiences with React, JavaScript, Node.js and modern tooling, backed by hands-on PHP and database experience.',
   },
   {
-    icon: 'mobile',
-    title: 'Cross-platform mobile',
-    body: 'Flutter and Dart are my tools for one codebase shipping to multiple platforms — currently applied to a full food ordering application.',
+    icon: 'layers',
+    title: 'Modern web stack',
+    body: 'React, Tailwind CSS, Vite and Sanity CMS are part of my toolkit for building and managing responsive web applications.',
   },
   {
     icon: 'clock',
@@ -64,28 +65,52 @@ export const skillGroups = [
   {
     title: 'Languages',
     color: '#f0a85a',
-    items: ['Java', 'Python', 'C', 'C++'],
+    items: ['Java', 'Python', 'C', 'C++ fundamentals'],
   },
   {
     title: 'Web development',
     color: '#5aa8f0',
-    items: ['PHP', 'MySQL', 'HTML5', 'CSS3', 'Responsive design', 'SEO basics'],
+    items: ['React', 'JavaScript', 'HTML5', 'CSS3', 'Tailwind CSS', 'Node.js', 'PHP'],
   },
   {
-    title: 'Mobile development',
+    title: 'Databases',
     color: '#3ee6b0',
-    items: ['Flutter', 'Dart', 'Cross-platform UI'],
+    items: ['MySQL', 'PostgreSQL'],
   },
   {
     title: 'Tools & platforms',
     color: '#b58cf0',
-    items: ['Git', 'GitHub', 'MS Office'],
+    items: ['MS Office', 'Git', 'GitHub', 'Vite', 'Sanity CMS'],
   },
 ];
 
 export const coreStrengths = ['Problem solving', 'Adaptability', 'Quick learning'];
 
 export const projects = [
+  {
+    id: 'fexkode',
+    title: 'Fexkode',
+    role: 'Full Stack Web Application',
+    period: '2026',
+    status: { label: 'Live', variant: 'live' },
+    description:
+      'A responsive technology services website focused on cloud infrastructure, helping businesses modernize, secure and scale with cloud and DevOps solutions.',
+    features: [
+      'Built sections for cloud solutions, DevOps, industries, case studies and the blog.',
+      'Implemented protected admin routes for creating, editing and managing articles.',
+      'Integrated Sanity CMS for content management and EmailJS for contact forms.',
+      'Configured SEO, sitemap, robots.txt and Google Analytics.',
+    ],
+    tech: ['React 19', 'Vite', 'Tailwind CSS', 'React Router', 'Express.js', 'JWT', 'Sanity CMS'],
+    links: [
+      {
+        label: 'Visit live site',
+        href: 'https://fexkode.vercel.app/',
+        variant: 'primary',
+        icon: 'external',
+      },
+    ],
+  },
   {
     id: 'gasckk',
     title: 'GASCKK Official College Website',
@@ -106,35 +131,12 @@ export const projects = [
     ],
     secondaryLink: { label: 'gasckk.org.in', href: 'https://gasckk.org.in' },
   },
-  {
-    id: 'food-ordering',
-    title: 'Food Ordering Application',
-    role: 'Final Year Project',
-    period: '2026',
-    status: { label: 'In progress', variant: 'wip' },
-    description:
-      'A cross-platform food ordering application pairing a Flutter front end with a PHP–MySQL backend — covering the full ordering flow from menu browsing to cart and order placement.',
-    features: [
-      'Flutter front end delivering one codebase across platforms.',
-      'PHP–MySQL backend for menu, cart and order management.',
-      'Designed as my final year capstone, currently in active development.',
-    ],
-    tech: ['Flutter', 'Dart', 'PHP', 'MySQL'],
-    links: [
-      {
-        label: 'View GitHub',
-        href: 'https://github.com/venkateshkumar67',
-        variant: 'ghost',
-        icon: 'external',
-      },
-    ],
-  },
 ];
 
 export const certifications = [
   {
     year: '2026',
-    name: 'Java Full Stack Development',
+    name: 'Python Full Stack',
     issuer: 'In progress',
   },
   {
@@ -154,14 +156,14 @@ export const certifications = [
   },
   {
     year: '2026',
-    name: 'Project-Based Learning — TANII Hackathon',
-    issuer: 'State Planning Commission, Government of Tamil Nadu',
+    name: 'Project-Based Learning — TANII Hackathon 2025–2026',
+    issuer: 'State Planning Commission, Govt. of Tamil Nadu',
   },
 ];
 
 export const education = {
   degree: 'Bachelor of Computer Applications (BCA)',
-  expected: 'Expected 2026',
+  expected: '2023 — 2026',
   school: 'Government Arts and Science College, Palkulam, Kanyakumari',
   affiliation: 'Affiliated to Manonmaniam Sundaranar University, Tirunelveli',
   coursework: [
@@ -182,7 +184,7 @@ export const languages = [
 ];
 
 export const socials = [
-  { label: 'GitHub', icon: 'github', href: 'https://github.com/venkateshkumar67' },
+  { label: 'GitHub', icon: 'github', href: 'https://github.com/venkadeshkumar67-code' },
   {
     label: 'LinkedIn',
     icon: 'linkedin',
@@ -216,23 +218,37 @@ export const codeSnippet = [
   ],
   [
     { t: 'plain', v: '  coreStack: [' },
-    { t: 'string', v: '"PHP"' },
+    { t: 'string', v: '"React"' },
     { t: 'plain', v: ', ' },
-    { t: 'string', v: '"MySQL"' },
+    { t: 'string', v: '"JavaScript"' },
     { t: 'plain', v: ', ' },
-    { t: 'string', v: '"Java"' },
+    { t: 'string', v: '"Node.js"' },
     { t: 'plain', v: ', ' },
-    { t: 'string', v: '"Flutter"' },
+    { t: 'string', v: '"Python"' },
     { t: 'plain', v: '],' },
   ],
   [
-    { t: 'plain', v: '  currentlyLearning: ' },
-    { t: 'string', v: '"Java Full Stack (Spring)"' },
+    { t: 'plain', v: '  databases: [' },
+    { t: 'string', v: '"MySQL"' },
+    { t: 'plain', v: ', ' },
+    { t: 'string', v: '"PostgreSQL"' },
+    { t: 'plain', v: '],' },
+  ],
+  [
+    { t: 'plain', v: '  tools: [' },
+    { t: 'string', v: '"Vite"' },
+    { t: 'plain', v: ', ' },
+    { t: 'string', v: '"Sanity CMS"' },
+    { t: 'plain', v: '],' },
+  ],
+  [
+    { t: 'plain', v: '  portfolio: ' },
+    { t: 'string', v: '"vk-portfolio-67.vercel.app"' },
     { t: 'plain', v: ',' },
   ],
   [
     { t: 'plain', v: '  shipped: ' },
-    { t: 'string', v: '"gasckk.org.in"' },
+    { t: 'string', v: '"Fexkode + gasckk.org.in"' },
     { t: 'plain', v: ',' },
   ],
   [

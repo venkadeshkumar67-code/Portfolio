@@ -10,7 +10,7 @@ export default function Projects() {
       id="projects"
       eyebrow="03 — Projects"
       title="Selected work"
-      lead="Two projects that show the range: a live public website and a full mobile application."
+      lead="Two live websites that show the range: cloud technology services and a production college platform."
     >
       <div className="projects__grid">
         {projects.map((project) => (

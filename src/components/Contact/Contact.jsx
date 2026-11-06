@@ -47,7 +47,7 @@ export default function Contact() {
                 rel="noopener noreferrer"
                 className="contact__link"
               >
-                github.com/venkateshkumar67
+                github.com/venkadeshkumar67-code
               </a>
             </li>
             <li>
